@@ -1,0 +1,109 @@
+.get-running {
+  position: relative;
+}
+
+.get-running-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.get-running-card {
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.get-running-card h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.get-running-card > p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.terminal {
+  background: #0d1117;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .terminal {
+  background: #1a1e2e;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green { background: #28c840; }
+
+.terminal-body {
+  padding: 20px 22px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: #e6edf3;
+}
+
+.terminal-comment {
+  color: #6e7681;
+}
+
+.terminal-cmd {
+  color: #e6edf3;
+}
+
+.terminal-cmd .prompt {
+  color: #7ee787;
+  margin-right: 6px;
+}
+
+.terminal-cmd .command {
+  color: #79c0ff;
+}
+
+.terminal-cmd .arg {
+  color: #e6edf3;
+}
+
+.terminal-success {
+  color: #7ee787;
+}
+
+.terminal-success .check {
+  margin-right: 6px;
+}
+
+.terminal-separator {
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .get-running-card {
+    padding: 24px;
+  }
+  .terminal-body {
+    font-size: 0.72rem;
+    padding: 16px;
+  }
+}

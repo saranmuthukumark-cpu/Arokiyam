@@ -1,0 +1,54 @@
+.cross-platform {
+  position: relative;
+  background: var(--gradient-section);
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.platform-card {
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.platform-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+  transition: var(--transition);
+}
+
+.platform-card:hover .platform-card-icon {
+  transform: scale(1.15);
+}
+
+.platform-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.platform-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.platform-note {
+  text-align: center;
+  margin-top: 32px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .platform-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
