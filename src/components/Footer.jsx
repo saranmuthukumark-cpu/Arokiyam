@@ -1,45 +1,107 @@
-import './Footer.css';
-
 export default function Footer() {
   return (
-    <footer className="footer" id="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <img src="/logo.png" alt="Arokiyam" className="footer-logo-img" />
+    <footer
+      className="border-t pt-12 pb-8"
+      style={{ borderColor: 'var(--border-glass)' }}
+      id="footer"
+    >
+      <div className="max-w-[1200px] mx-auto px-6">
+        {/* Content row */}
+        <div className="flex justify-between items-start gap-10 mb-10 max-[768px]:flex-col">
+          {/* Brand */}
+          <div className="max-w-[320px]">
+            <div
+              className="flex items-center gap-[10px] font-bold text-[1.3rem] mb-3"
+              style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}
+            >
+              <img src="/logo.png" alt="Arokiyam" className="w-8 h-8 rounded-[8px] object-cover" />
               Arokiyam
             </div>
-            <p>
+            <p className="text-[0.85rem] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
               Your intelligent desktop wellness companion.
               Built for developers, by developers.
             </p>
           </div>
 
-          <div className="footer-links">
-            <div className="footer-column">
-              <h4>Product</h4>
-              <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#download">Downloads</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
+          {/* Links */}
+          <div className="flex gap-12 max-[768px]:gap-8 flex-wrap">
+            <div>
+              <h4
+                className="font-semibold text-[0.85rem] uppercase tracking-[0.05em] mb-4"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-secondary)' }}
+              >
+                Product
+              </h4>
+              <ul className="flex flex-col gap-[10px] list-none">
+                {[
+                  { label: 'Features', href: '#features' },
+                  { label: 'Downloads', href: '#download' },
+                  { label: 'Screenshots', href: '#screenshots' },
+                ].map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      className="text-[0.85rem] transition-all duration-300"
+                      style={{ color: 'var(--text-muted)' }}
+                      onMouseEnter={e => e.target.style.color = 'var(--text-primary)'}
+                      onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="https://github.com/anburocky3/arokiyam-app" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="https://github.com/anburocky3/arokiyam-app#readme" target="_blank" rel="noopener noreferrer">Documentation</a></li>
-                <li><a href="https://github.com/anburocky3/arokiyam-app/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License (MIT)</a></li>
+            <div>
+              <h4
+                className="font-semibold text-[0.85rem] uppercase tracking-[0.05em] mb-4"
+                style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-secondary)' }}
+              >
+                Resources
+              </h4>
+              <ul className="flex flex-col gap-[10px] list-none">
+                {[
+                  { label: 'GitHub', href: 'https://github.com/anburocky3/arokiyam-app', external: true },
+                  { label: 'Documentation', href: 'https://github.com/anburocky3/arokiyam-app#readme', external: true },
+                  { label: 'License (MIT)', href: 'https://github.com/anburocky3/arokiyam-app/blob/main/LICENSE', external: true },
+                ].map(({ label, href, external }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      className="text-[0.85rem] transition-all duration-300"
+                      style={{ color: 'var(--text-muted)' }}
+                      onMouseEnter={e => e.target.style.color = 'var(--text-primary)'}
+                      onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>Made with ❤️ by <a href="https://anbuselvan-annamalai.com" target="_blank" rel="noopener noreferrer">Anbuselvan Annamalai</a></p>
-          <p>All Rights Reserved © 2026</p>
+        {/* Bottom bar */}
+        <div
+          className="border-t pt-6 flex justify-between items-center flex-wrap gap-3 max-[768px]:flex-col max-[768px]:text-center"
+          style={{ borderColor: 'var(--border-glass)' }}
+        >
+          <p className="text-[0.8rem]" style={{ color: 'var(--text-muted)' }}>
+            Made with ❤️ by{' '}
+            <a
+              href="https://anbuselvan-annamalai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--accent-primary-hover)' }}
+            >
+              Anbuselvan Annamalai
+            </a>
+          </p>
+          <p className="text-[0.8rem]" style={{ color: 'var(--text-muted)' }}>All Rights Reserved © 2026</p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,3 @@
-import './Features.css';
-
 /* SVG icon components */
 const icons = {
   activity: (
@@ -54,80 +52,40 @@ const icons = {
 };
 
 const features = [
-  {
-    icon: icons.activity,
-    title: 'Live Stress Monitoring',
-    desc: 'Tracks stress levels using keyboard and mouse activity signals in real-time.',
-    color: '#6366f1',
-  },
-  {
-    icon: icons.battery,
-    title: 'Health Battery Model',
-    desc: 'A health battery drains during stress and recharges during breaks.',
-    color: '#10b981',
-  },
-  {
-    icon: icons.shuffle,
-    title: 'Smart Randomized Breaks',
-    desc: 'Break reminders are randomized to avoid reminder fatigue.',
-    color: '#f59e0b',
-  },
-  {
-    icon: icons.eye,
-    title: 'Eye Blink Reminder',
-    desc: 'Guided blink exercises reduce eye strain during long coding sessions.',
-    color: '#22d3ee',
-  },
-  {
-    icon: icons.droplet,
-    title: 'Hydration Lock',
-    desc: 'Water reminders help users stay hydrated throughout the day.',
-    color: '#3b82f6',
-  },
-  {
-    icon: icons.coffee,
-    title: 'Focus Drink Activity',
-    desc: 'Reminds users to drink coffee, tea, or juice for sustained focus.',
-    color: '#a78bfa',
-  },
-  {
-    icon: icons.target,
-    title: 'Health Strictness Modes',
-    desc: 'Choose from Basic, Medium, or Health Conscious strictness levels.',
-    color: '#f43f5e',
-    tags: ['Basic', 'Medium', 'Health Conscious'],
-  },
-  {
-    icon: icons.zap,
-    title: 'Manual Quick Actions',
-    desc: 'Instantly trigger any wellness activity with one-click quick actions.',
-    color: '#14b8a6',
-    tags: ['Blink', 'Break', 'Hydration', 'Drink'],
-  },
-  {
-    icon: icons.bell,
-    title: 'Smart Notifications',
-    desc: "Desktop reminders that don't interrupt your workflow.",
-    color: '#f97316',
-  },
+  { icon: icons.activity, title: 'Live Stress Monitoring', desc: 'Tracks stress levels using keyboard and mouse activity signals in real-time.', color: '#6366f1' },
+  { icon: icons.battery, title: 'Health Battery Model', desc: 'A health battery drains during stress and recharges during breaks.', color: '#10b981' },
+  { icon: icons.shuffle, title: 'Smart Randomized Breaks', desc: 'Break reminders are randomized to avoid reminder fatigue.', color: '#f59e0b' },
+  { icon: icons.eye, title: 'Eye Blink Reminder', desc: 'Guided blink exercises reduce eye strain during long coding sessions.', color: '#22d3ee' },
+  { icon: icons.droplet, title: 'Hydration Lock', desc: 'Water reminders help users stay hydrated throughout the day.', color: '#3b82f6' },
+  { icon: icons.coffee, title: 'Focus Drink Activity', desc: 'Reminds users to drink coffee, tea, or juice for sustained focus.', color: '#a78bfa' },
+  { icon: icons.target, title: 'Health Strictness Modes', desc: 'Choose from Basic, Medium, or Health Conscious strictness levels.', color: '#f43f5e', tags: ['Basic', 'Medium', 'Health Conscious'] },
+  { icon: icons.zap, title: 'Manual Quick Actions', desc: 'Instantly trigger any wellness activity with one-click quick actions.', color: '#14b8a6', tags: ['Blink', 'Break', 'Hydration', 'Drink'] },
+  { icon: icons.bell, title: 'Smart Notifications', desc: "Desktop reminders that don't interrupt your workflow.", color: '#f97316' },
 ];
 
 export default function Features() {
   return (
-    <section className="features section-padding" id="features">
-      <div className="container">
-        <div className="section-header">
+    <section
+      className="relative py-[100px] md:py-[80px]"
+      style={{ background: 'var(--gradient-section)' }}
+      id="features"
+    >
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-14 md:mb-9">
           <h2 className="section-title fade-in">Powerful Wellness Features for Developers</h2>
-          <p className="section-subtitle fade-in fade-in-delay-1">
+          <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Everything you need to maintain your health while staying productive
           </p>
         </div>
 
-        <div className="features-grid">
+        <div className="grid grid-cols-3 max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1 gap-5">
           {features.map((f, i) => (
-            <div key={f.title} className={`glass-card feature-card fade-in fade-in-delay-${(i % 3) + 1}`}>
+            <div
+              key={f.title}
+              className={`glass-card feature-card fade-in fade-in-delay-${(i % 3) + 1} px-7 py-8 group`}
+            >
               <div
-                className="feature-icon"
+                className="w-[50px] h-[50px] rounded-[14px] flex items-center justify-center text-[1.4rem] mb-5 transition-all duration-300 group-hover:scale-110"
                 style={{
                   background: `${f.color}18`,
                   border: `1px solid ${f.color}33`,
@@ -136,12 +94,22 @@ export default function Features() {
               >
                 {f.icon}
               </div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
+              <h3 className="font-semibold text-[1.05rem] mb-[10px]" style={{ fontFamily: 'var(--font-heading)' }}>{f.title}</h3>
+              <p className="text-[0.9rem] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{f.desc}</p>
               {f.tags && (
-                <div className="feature-tags">
+                <div className="flex flex-wrap gap-[6px] mt-3">
                   {f.tags.map((tag) => (
-                    <span key={tag} className="feature-tag">{tag}</span>
+                    <span
+                      key={tag}
+                      className="px-[10px] py-1 rounded-[6px] text-[0.72rem] font-medium border"
+                      style={{
+                        background: 'var(--bg-glass)',
+                        borderColor: 'var(--border-glass)',
+                        color: 'var(--text-muted)',
+                      }}
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
               )}

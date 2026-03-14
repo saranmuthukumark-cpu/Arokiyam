@@ -1,5 +1,3 @@
-import './CrossPlatform.css';
-
 const WindowsIcon = () => (
   <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
     <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
@@ -26,26 +24,38 @@ const platforms = [
 
 export default function CrossPlatform() {
   return (
-    <section className="cross-platform section-padding" id="cross-platform">
-      <div className="container">
-        <div className="section-header">
+    <section
+      className="relative py-[100px] md:py-[80px]"
+      style={{ background: 'var(--gradient-section)' }}
+      id="cross-platform"
+    >
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-14 md:mb-9">
           <h2 className="section-title fade-in">Works Everywhere</h2>
-          <p className="section-subtitle fade-in fade-in-delay-1">
+          <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Arokiyam runs natively on all major desktop platforms
           </p>
         </div>
 
-        <div className="platform-grid">
+        <div className="grid grid-cols-3 max-[600px]:grid-cols-1 gap-6 max-w-[800px] mx-auto max-[600px]:max-w-[320px]">
           {platforms.map((p, i) => (
-            <div key={p.name} className={`glass-card platform-card fade-in fade-in-delay-${i + 1}`}>
-              <span className="platform-card-icon" style={{ color: p.color }}>{p.icon}</span>
-              <h3>{p.name}</h3>
-              <p>{p.desc}</p>
+            <div
+              key={p.name}
+              className={`glass-card platform-card fade-in fade-in-delay-${i + 1} px-7 py-10 text-center group`}
+            >
+              <span
+                className="text-[2.5rem] mb-4 block transition-all duration-300 group-hover:scale-[1.15]"
+                style={{ color: p.color }}
+              >
+                {p.icon}
+              </span>
+              <h3 className="font-semibold text-[1.1rem] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{p.name}</h3>
+              <p className="text-[0.85rem]" style={{ color: 'var(--text-muted)' }}>{p.desc}</p>
             </div>
           ))}
         </div>
 
-        <p className="platform-note fade-in">
+        <p className="fade-in text-center mt-8 text-[0.95rem]" style={{ color: 'var(--text-secondary)' }}>
           Download once, enjoy the same great experience across all your devices.
         </p>
       </div>
