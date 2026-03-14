@@ -24,6 +24,7 @@ export default function Navbar() {
   const links = [
     { label: 'Features', href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
+    { label: 'FAQ', href: '#faq' },
     { label: 'Download', href: '#download' },
   ];
 
@@ -73,7 +74,7 @@ export default function Navbar() {
               {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
             </button>
             <a
-              href="https://github.com/anburocky3/arokiyam-app"
+              href="https://github.com/anburocky3/arokiyam-app/fork"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary navbar-cta-desktop hidden md:inline-flex items-center gap-2 py-[9px] px-5 rounded-xl font-semibold text-[0.82rem]"

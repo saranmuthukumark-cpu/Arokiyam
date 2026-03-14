@@ -3,52 +3,87 @@ import { FaGithub } from 'react-icons/fa';
 
 export default function CallToAction() {
   return (
-    <section className="relative overflow-hidden py-[100px] md:py-[80px]" id="cta">
-      {/* Ambient glow */}
+    <section
+      className="relative overflow-hidden py-[120px] md:py-[100px] flex items-center justify-center min-h-[60vh]"
+      id="cta"
+      aria-labelledby="cta-heading"
+    >
+      {/* Dynamic CTA Glow */}
       <div
-        className="absolute rounded-full pointer-events-none"
-        style={{
-          width: 500,
-          height: 500,
-          background: 'var(--accent-primary)',
-          filter: 'blur(120px)',
-          opacity: 0.08,
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}
-      />
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] opacity-[0.15] pointer-events-none"
+        style={{ background: 'var(--accent-primary)' }}
+        aria-hidden="true"
+      ></div>
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-[1]">
-        <div className="text-center max-w-[700px] mx-auto">
-          <h2
-            className="cta-title section-title fade-in mb-5"
-            style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}
-          >
-            Start Building Healthier Work Habits Today
-          </h2>
-          <p
-            className="fade-in fade-in-delay-1 text-[1.05rem] mb-9 leading-[1.7]"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            Let Arokiyam protect your health while you focus on building great software.
-          </p>
-          <div className="fade-in fade-in-delay-2 flex items-center justify-center gap-4 flex-wrap max-[768px]:flex-col">
-            <a href="#download" className="btn btn-primary inline-flex items-center gap-2 px-[26px] py-[13px] rounded-xl font-semibold text-[0.9rem]">
-              <FiDownload size={16} />
-              Download Arokiyam
-            </a>
-            <a
-              href="https://github.com/anburocky3/arokiyam-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary inline-flex items-center gap-2 px-[26px] py-[13px] rounded-xl font-semibold text-[0.9rem]"
-            >
-              <FaGithub size={16} />
-              Star on GitHub
-            </a>
-          </div>
+      {/* Decorative Rings */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-[rgba(99,102,241,0.1)]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[rgba(99,102,241,0.05)]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[rgba(99,102,241,0.02)]"></div>
+      </div>
+
+      <div className="max-w-[1200px] mx-auto px-6 relative z-[1] w-full text-center flex flex-col items-center">
+        {/* Eyebrow */}
+        <div
+          className="fade-in inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[0.85rem] font-semibold tracking-wide uppercase mb-6"
+          style={{
+            color: 'var(--accent-primary)',
+            background: 'var(--accent-green-glow)',
+            border: '1px solid rgba(99,102,241,0.2)'
+          }}
+        >
+          Start Today
         </div>
+
+        {/* Heading */}
+        <h2
+          id="cta-heading"
+          className="fade-in fade-in-delay-1 font-bold mb-6 leading-[1.2]"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+        >
+          Start Building <span
+            className="text-transparent bg-clip-text"
+            style={{ backgroundImage: 'var(--gradient-primary)' }}
+          >
+            Healthier
+          </span>
+          <br />Work Habits Today
+        </h2>
+
+        {/* Description */}
+        <p
+          className="fade-in fade-in-delay-2 text-[1.1rem] md:text-[1.2rem] max-w-[600px] mx-auto mb-10 leading-relaxed"
+          style={{ color: 'var(--text-secondary)' }}
+        >
+          Let Arokiyam protect your health while you focus on building great software.
+        </p>
+
+        {/* Buttons */}
+        <div className="fade-in fade-in-delay-3 flex items-center justify-center gap-4 flex-wrap w-full mb-8">
+          <a
+            href="#download"
+            className="btn btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-[1rem] shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:scale-105 transition-transform"
+          >
+            <FiDownload size={20} />
+            Download Arokiyam
+          </a>
+          <a
+            href="https://github.com/anburocky3/arokiyam-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-[1rem] transition-all hover:scale-105"
+            style={{
+              background: 'var(--bg-glass)',
+              border: '1px solid var(--border-glass)',
+              color: 'var(--text-primary)',
+              backdropFilter: 'var(--backdrop-blur)'
+            }}
+          >
+            ⭐ Star on GitHub
+          </a>
+        </div>
+
+
       </div>
     </section>
   );

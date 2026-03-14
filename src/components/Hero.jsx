@@ -1,7 +1,10 @@
 import { FiDownload } from 'react-icons/fi';
 import { FaGithub, FaWindows, FaApple, FaLinux } from 'react-icons/fa';
+import { useGitHubRelease } from '../hooks/useGitHubRelease';
 
 export default function Hero() {
+  const { version, loading } = useGitHubRelease();
+
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
@@ -109,7 +112,11 @@ export default function Hero() {
           <span style={{ opacity: 0.4 }}>·</span>
           <span className="flex items-center gap-[5px]"><FaLinux size={14} />Linux</span>
         </div>
+        <p className="fade-in text-center mt-8 text-[0.85rem]" style={{ color: 'var(--text-muted)' }}>
+          Latest stable release: <strong>{loading ? '...' : version}</strong>
+        </p>
       </div>
+
     </section>
   );
 }

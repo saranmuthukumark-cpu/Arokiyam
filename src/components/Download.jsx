@@ -1,35 +1,40 @@
 import { FiDownload } from 'react-icons/fi';
 import { FaWindows, FaApple, FaLinux } from 'react-icons/fa';
 
-const downloads = [
-  {
-    platform: 'Windows',
-    type: 'Installer (.exe)',
-    icon: <FaWindows size={30} />,
-    os: 'windows',
-    color: '#0078d4',
-    url: 'https://github.com/anburocky3/arokiyam-app/releases/download/v1.0.6/arokiyam-1.0.6-setup.exe',
-  },
-  {
-    platform: 'macOS',
-    type: 'DMG Package',
-    icon: <FaApple size={30} />,
-    os: 'macos',
-    color: '#a3aaae',
-    url: 'https://github.com/anburocky3/arokiyam-app/releases/download/v1.0.6/arokiyam-1.0.6.dmg',
-  },
-  {
-    platform: 'Linux',
-    type: 'AppImage',
-    icon: <FaLinux size={30} />,
-    os: 'linux-appimage',
-    color: '#f59e0b',
-    url: 'https://github.com/anburocky3/arokiyam-app/releases/download/v1.0.6/arokiyam-1.0.6.AppImage',
-  },
-
-];
+import { useGitHubRelease } from '../hooks/useGitHubRelease';
 
 export default function Download() {
+  const { version, loading } = useGitHubRelease();
+  
+  // Create download links dynamically based on the fetched version
+  const cleanVersion = version.replace(/^v/, ''); // Remove 'v' if present
+  
+  const downloads = [
+    {
+      platform: 'Windows',
+      type: 'Installer (.exe)',
+      icon: <FaWindows size={30} />,
+      os: 'windows',
+      color: '#0078d4',
+      url: `https://github.com/anburocky3/arokiyam-app/releases/download/${version}/arokiyam-${cleanVersion}-setup.exe`,
+    },
+    {
+      platform: 'macOS',
+      type: 'DMG Package',
+      icon: <FaApple size={30} />,
+      os: 'macos',
+      color: '#a3aaae',
+      url: `https://github.com/anburocky3/arokiyam-app/releases/download/${version}/arokiyam-${cleanVersion}.dmg`,
+    },
+    {
+      platform: 'Linux',
+      type: 'AppImage',
+      icon: <FaLinux size={30} />,
+      os: 'linux-appimage',
+      color: '#f59e0b',
+      url: `https://github.com/anburocky3/arokiyam-app/releases/download/${version}/arokiyam-${cleanVersion}.AppImage`,
+    },
+  ];
   return (
     <section
       className="relative py-[100px] md:py-[80px]"
@@ -80,7 +85,7 @@ export default function Download() {
         </div>
 
         <p className="fade-in text-center mt-8 text-[0.85rem]" style={{ color: 'var(--text-muted)' }}>
-          Latest stable release: <strong>v1.0.6</strong>
+          Latest stable release: <strong>{loading ? '...' : version}</strong>
         </p>
       </div>
     </section>

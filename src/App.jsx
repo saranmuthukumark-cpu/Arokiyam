@@ -7,6 +7,7 @@ import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import WhyDevelopers from './components/WhyDevelopers';
 import GetRunning from './components/GetRunning';
+import FAQ from './components/FAQ';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 
@@ -24,6 +25,7 @@ export default function App() {
         <HowItWorks />
         <WhyDevelopers />
         <GetRunning />
+        <FAQ />
         <CallToAction />
       </main>
       <Footer />
