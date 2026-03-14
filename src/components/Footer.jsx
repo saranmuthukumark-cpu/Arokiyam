@@ -5,9 +5,9 @@ export default function Footer() {
       style={{ borderColor: 'var(--border-glass)' }}
       id="footer"
     >
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4">
         {/* Content row */}
-        <div className="flex justify-between items-start gap-10 mb-10 max-[768px]:flex-col">
+        <div className="flex justify-between items-start gap-10 xl:gap-16 2xl:gap-24 mb-10 max-[768px]:flex-col">
           {/* Brand */}
           <div className="max-w-[320px]">
             <div

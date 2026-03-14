@@ -20,7 +20,7 @@ export default function Screenshots() {
         style={{ background: 'var(--accent-primary)' }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4 relative z-10">
         <div className="text-center mb-10">
           <h2 className="section-title fade-in mb-4">See Arokiyam in Action</h2>
           <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -51,28 +51,25 @@ export default function Screenshots() {
           })}
         </div>
 
-        {/* Laptop Mockup */}
-        <div className="fade-in fade-in-delay-3 max-w-[900px] mx-auto relative pt-4">
-          {/* Laptop Screen Frame */}
+        <div className="fade-in fade-in-delay-3 w-full max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1300px] mx-auto relative pt-4">
           <div
-            className="relative rounded-[20px] md:rounded-[28px] p-[10px] md:p-3 pb-8 md:pb-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mx-auto"
+            className="relative rounded-[20px] md:rounded-[28px] p-[10px] md:p-3 pb-8 md:pb-10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mx-auto w-full aspect-[16/10] flex flex-col"
             style={{
               background: '#2d3340', // Metallic gray
-              border: '2px solid rgba(255,255,255,0.08)',
-              borderBottom: 'none'
+              border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            {/* Camera dot */}
-            <div className="absolute top-[12px] md:top-[16px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#1e232d] border border-[#3e4658] z-10"></div>
+            {/* Camera Dot */}
+            <div className="absolute top-[10px] md:top-[14px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#1a1a24] shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] z-20"></div>
 
-            {/* Screen Inner */}
-            <div className="relative rounded-[10px] md:rounded-[16px] overflow-hidden aspect-[16/10] bg-[#000] ">
+            {/* Screen Container */}
+            <div className="relative w-full flex-grow bg-[#0a0a0f] rounded-[10px] md:rounded-xl overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] border border-[rgba(255,255,255,0.03)]">
               {screenshots.map((shot) => (
                 <img
                   key={shot.id}
                   src={shot.image}
                   alt={shot.title}
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-500 ease-in-out"
+                  className="absolute inset-0 w-full h-full object-contain md:object-cover object-top transition-opacity duration-500 ease-in-out"
                   style={{
                     opacity: activeTab.id === shot.id ? 1 : 0,
                     pointerEvents: activeTab.id === shot.id ? 'auto' : 'none',

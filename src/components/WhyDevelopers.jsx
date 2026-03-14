@@ -57,7 +57,7 @@ export default function WhyDevelopers() {
       style={{ background: 'var(--gradient-section)' }}
       id="why-developers"
     >
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4">
         <div className="text-center mb-14 md:mb-9">
           <h2 className="section-title fade-in">Why Developers Love Arokiyam</h2>
           <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -67,7 +67,7 @@ export default function WhyDevelopers() {
 
         <div className="comparison-grid fade-in fade-in-delay-2 max-w-[800px] mx-auto">
           {/* Header */}
-          <div className="grid max-[600px]:grid-cols-1 gap-0 mb-4" style={{ gridTemplateColumns: '1fr 48px 1fr' }}>
+          <div className="md:grid hidden gap-0 mb-4" style={{ gridTemplateColumns: '1fr 48px 1fr' }}>
             <span
               className="font-semibold text-[0.9rem] uppercase tracking-[0.06em] px-5 py-3 text-center max-[600px]:hidden"
               style={{ fontFamily: 'var(--font-heading)', color: 'var(--accent-rose)' }}
@@ -86,15 +86,15 @@ export default function WhyDevelopers() {
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`comparison-row fade-in fade-in-delay-${Math.min(i + 1, 5)} grid mb-3 max-[600px]:grid-cols-1 max-[600px]:gap-2`}
-              style={{ gridTemplateColumns: '1fr 48px 1fr' }}
+              className={`comparison-row fade-in fade-in-delay-${Math.min(i + 1, 5)} grid max-[600px]:grid-cols-1 md:grid-cols-[1fr_48px_1fr] mb-3 gap-2`}
             >
               <div
-                className="comparison-problem flex items-center gap-3 px-[22px] py-[18px] rounded-[10px] text-[0.92rem] font-medium border"
+                className="comparison-problem flex flex-col min-[450px]:flex-row items-center gap-2 min-[450px]:gap-3 px-4 min-[450px]:px-[22px] py-3 min-[450px]:py-[18px] rounded-[10px] text-[0.85rem] min-[450px]:text-[0.92rem] font-medium border text-center min-[450px]:text-left w-full"
                 style={{
                   background: 'rgba(244, 63, 94, 0.06)',
                   borderColor: 'rgba(244, 63, 94, 0.15)',
                   color: 'var(--text-secondary)',
+                  wordBreak: 'break-word'
                 }}
               >
                 <span className="text-[1.1rem] shrink-0">{row.pIcon}</span>
@@ -102,11 +102,12 @@ export default function WhyDevelopers() {
               </div>
               <div className="comparison-arrow flex items-center justify-center text-[1.2rem] max-[600px]:hidden" style={{ color: 'var(--text-muted)' }}>→</div>
               <div
-                className="comparison-solution flex items-center gap-3 px-[22px] py-[18px] rounded-[10px] text-[0.92rem] font-medium border"
+                className="comparison-solution flex flex-col min-[450px]:flex-row items-center gap-2 min-[450px]:gap-3 px-4 min-[450px]:px-[22px] py-3 min-[450px]:py-[18px] rounded-[10px] text-[0.85rem] min-[450px]:text-[0.92rem] font-medium border text-center min-[450px]:text-left w-full"
                 style={{
                   background: 'rgba(16, 185, 129, 0.06)',
                   borderColor: 'rgba(16, 185, 129, 0.15)',
                   color: 'var(--text-primary)',
+                  wordBreak: 'break-word'
                 }}
               >
                 <span className="text-[1.1rem] shrink-0">{row.sIcon}</span>

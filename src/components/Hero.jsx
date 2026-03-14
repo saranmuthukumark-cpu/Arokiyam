@@ -21,11 +21,11 @@ export default function Hero() {
       <div
         className="hero-glow absolute rounded-full pointer-events-none"
         style={{
-          width: 500,
-          height: 500,
+          width: 'clamp(500px, 40vw, 900px)',
+          height: 'clamp(500px, 40vw, 900px)',
           background: 'var(--accent-primary)',
           top: -150,
-          left: -100,
+          left: 'max(-100px, -5vw)',
           opacity: 0.10,
           filter: 'blur(120px)',
         }}
@@ -33,17 +33,17 @@ export default function Hero() {
       <div
         className="hero-glow absolute rounded-full pointer-events-none"
         style={{
-          width: 400,
-          height: 400,
+          width: 'clamp(400px, 35vw, 800px)',
+          height: 'clamp(400px, 35vw, 800px)',
           background: 'var(--accent-purple)',
           bottom: -80,
-          right: -100,
+          right: 'max(-100px, -5vw)',
           opacity: 0.08,
           filter: 'blur(120px)',
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-[1] w-full max-[768px]:pb-[60px] text-center">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4 relative z-[1] max-[768px]:pb-[60px] text-center">
         {/* Badge */}
         <div
           className="hero-badge fade-in inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[0.8rem] font-medium mb-8"
@@ -61,7 +61,7 @@ export default function Hero() {
         {/* Title */}
         <h1
           className="fade-in fade-in-delay-1 font-bold mb-5 tracking-[-0.03em]"
-          style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', lineHeight: 1.12 }}
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', lineHeight: 1.12 }}
         >
           Your Intelligent Desktop<br />
           <span
@@ -78,8 +78,8 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p
-          className="fade-in fade-in-delay-2 mb-9 leading-relaxed max-w-[520px] mx-auto"
-          style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)', color: 'var(--text-secondary)' }}
+          className="fade-in fade-in-delay-2 mb-9 leading-relaxed max-w-[520px] md:max-w-[600px] xl:max-w-[750px] mx-auto"
+          style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)', color: 'var(--text-secondary)' }}
         >
           Track stress, take smart breaks, and protect your health — all while you code.
         </p>

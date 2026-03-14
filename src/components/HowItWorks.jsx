@@ -11,7 +11,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="relative py-[100px] md:py-[80px]" id="how-it-works">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4">
         <div className="text-center mb-14 md:mb-9">
           <h2 className="section-title fade-in">How It Works</h2>
           <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>

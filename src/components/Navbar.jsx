@@ -43,7 +43,7 @@ export default function Navbar() {
         }}
       >
         {/* Clean glassmorphism nav content */}
-        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+        <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4 flex items-center justify-between">
           <a
             href="#"
             className="flex items-center gap-[10px] font-bold text-[1.3rem]"

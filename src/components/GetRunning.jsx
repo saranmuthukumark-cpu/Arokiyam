@@ -1,8 +1,8 @@
 export default function GetRunning() {
   return (
     <section className="relative py-[100px] md:py-[80px]" id="get-running">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="max-w-[720px] mx-auto">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4">
+        <div className="w-full max-w-[800px] xl:max-w-[1000px] mx-auto">
           <div
             className="get-running-card glass-card fade-in p-10 md:p-6"
           >

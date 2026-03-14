@@ -41,7 +41,7 @@ export default function Download() {
       style={{ background: 'var(--gradient-section)' }}
       id="download"
     >
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="w-full max-w-[1200px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 max-[480px]:px-4">
         <div className="text-center mb-14 md:mb-9">
           <h2 className="section-title fade-in">Download Arokiyam</h2>
           <p className="fade-in fade-in-delay-1 text-[1.05rem] max-w-[580px] mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
@@ -49,7 +49,7 @@ export default function Download() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 max-[768px]:grid-cols-2 max-[480px]:grid-cols-1 gap-8 max-w-[700px] mx-auto max-[480px]:max-w-[320px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-[400px] md:max-w-full lg:max-w-[1000px] xl:max-w-[1200px] mx-auto">
           {downloads.map((item, i) => (
             <a
               key={item.os}
